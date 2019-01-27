@@ -12,13 +12,13 @@ Primeiramente, precisamos treinar no UDPipe dois modelos diferentes do Bosque-UD
 
 O arquivo de treino chamado "mais-antiga.conllu", referente ao corpus anterior às correções de PoS, foi obtido do commit de número 
 [7a65972e77e153ad24ddd3f761f0976ff52da063](https://github.com/UniversalDependencies/UD_Portuguese-Bosque/tree/7a65972e77e153ad24ddd3f761f0976ff52da063) do Bosque-UD, no GitHub. O arquivo "depois-convergencia.conllu", referente ao corpus posterior às correções, é o commit de número [5ccf8baa7810c297271c3f560215e64ebccd5b93](https://github.com/UniversalDependencies/UD_Portuguese-Bosque/tree/5ccf8baa7810c297271c3f560215e64ebccd5b93), no GitHub. A única diferença entre os dois arquivos são as 358 correções. Uma vez baixados os repositórios, juntamos os arquivos da pasta "documents/" em arquivos de treino,
-desenvolvimento e teste, utilizando o script [generate_release.py](blob/master/generate_release.py).
+desenvolvimento e teste, utilizando o script [generate_release.py](generate_release.py).
 
 Para construir os materiais de treino, juntamos as partições "train" e "dev":
 
 	$ cat *-dev.conllu *-train.conllu > treino.conllu
 
-Outra etapa importante, para otimizar o processo de treinamento do UDPipe, foi o de tratamento dos arquivos de treino gerados na etapa acima. A partir do código [tratar_conllu.py](blob/master/tratar_conllu.py), removemos as colunas XPOS e Misc dos arquivos de treino "mais-antiga" e "depois-convergencia", para que o UDPipe não tivesse que se preocupar em aprender dados irrelevantes para o nosso propósito e, assim, otimizar nosso tempo.
+Outra etapa importante, para otimizar o processo de treinamento do UDPipe, foi o de tratamento dos arquivos de treino gerados na etapa acima. A partir do código [tratar_conllu.py](tratar_conllu.py), removemos as colunas XPOS e Misc dos arquivos de treino "mais-antiga" e "depois-convergencia", para que o UDPipe não tivesse que se preocupar em aprender dados irrelevantes para o nosso propósito e, assim, otimizar nosso tempo.
 
 O treino dos dois modelos, simultaneamente, durou cerca de 5 horas, utilizando-se o seguinte comando:
 
@@ -26,12 +26,14 @@ O treino dos dois modelos, simultaneamente, durou cerca de 5 horas, utilizando-s
 
 Não treinamos o tokenizador para nenhum dos modelos uma vez que, em momento algum, o utilizaríamos, pois sempre damos ao UDPipe materiais já previamente tokenizados.
 
-Já com os modelos "mais-antiga.udpipe" e "depois-convergencia.udpipe" treinados, o segundo passo é avaliar qual modelo aprendeu melhor. Utilizamos o script [tokenizar_conllu.py](blob/master/tokenizar_conllu.py) para remover a anotação da partição de teste do Bosque “depois-convergencia”. Com o arquivo cru (sem anotação), mas já tokenizado, utilizamos o programa [udpipe_vertical.py](blob/master/udpipe_vertical.py) para anotar a partição teste do Bosque com os modelos "mais-antiga.udpipe" e, posteriormente, "depois-convergencia.udpipe". Uma vez com os resultados das anotações, utilizamos o programa de avaliação oficial do UDPipe
-[conll18_ud_eval.py](blob/master/conll18_ud_eval.py) com o parâmetro "-v" ativado para gerar a comparação entre as anotações de cada modelo e o golden do Bosque "depois-convergencia", partição teste.
+Já com os modelos "mais-antiga.udpipe" e "depois-convergencia.udpipe" treinados, o segundo passo é avaliar qual modelo aprendeu melhor. Utilizamos o script [tokenizar_conllu.py](tokenizar_conllu.py) para remover a anotação da partição de teste do Bosque “depois-convergencia”. Com o arquivo cru (sem anotação), mas já tokenizado, utilizamos o programa [udpipe_vertical.py](udpipe_vertical.py) para anotar a partição teste do Bosque com os modelos "mais-antiga.udpipe" e, posteriormente, "depois-convergencia.udpipe". Uma vez com os resultados das anotações, utilizamos o programa de avaliação oficial do UDPipe
+[conll18_ud_eval.py](conll18_ud_eval.py) com o parâmetro "-v" ativado para gerar a comparação entre as anotações de cada modelo e o golden do Bosque "depois-convergencia", partição teste.
 
 # Resultados
 
 Os resultados completos podem ser conferidos a seguir:
+
+mais-antiga.udpipe:
 
 	elvis@elvis-LENOVO:~/Dropbox/Experimento Revisão de POS$ python3 conll18_ud_eval.py golden_teste_depois-convergencia_editado.conllu resultado_mais-antiga.conllu -v
 	Metric     | Precision |    Recall |  F1 Score | AligndAcc
@@ -49,6 +51,8 @@ Os resultados completos podem ser conferidos a seguir:
 	CLAS       |     74.01 |     73.59 |     73.80 |     73.59
 	MLAS       |     65.28 |     64.91 |     65.10 |     64.91
 	BLEX       |     70.90 |     70.50 |     70.70 |     70.50
+
+depois-convergencia.udpipe:
 
 	elvis@elvis-LENOVO:~/Dropbox/Experimento Revisão de POS$ python3 conll18_ud_eval.py golden_teste_depois-convergencia_editado.conllu resultado_depois-convergencia.conllu -v
 	Metric     | Precision |    Recall |  F1 Score | AligndAcc
