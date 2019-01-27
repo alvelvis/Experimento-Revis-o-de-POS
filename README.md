@@ -1,10 +1,10 @@
 # Introdução
 
-Realizamos esse experimento com o intuito de verificar o possível impacto das correções feitas no corpus [UD-Portuguese-Bosque](https://github.com/UniversalDependencies/UD_Portuguese-Bosque) no aprendizado do UDPipe. Essa correções são o resultado da análise das Matrizes de Confusão de Part-Of-Speech (já documentadas em Rocha et al., 2018¹), que como resultado final teve 303 tokens com PoS alterados (0.14% dos tokens do corpus).
+Realizamos esse experimento com o intuito de verificar o possível impacto das correções feitas no corpus [UD-Portuguese-Bosque](https://github.com/UniversalDependencies/UD_Portuguese-Bosque) no aprendizado do UDPipe. Essa correções são o resultado da análise das Matrizes de Confusão de Part-Of-Speech (já documentadas em Rocha et al., 2018[¹](#referências)), que como resultado final teve 303 tokens com PoS alterados (0.14% dos tokens do corpus).
 
 Além dessas correções, também há as correções das convergências: ao analisar matriz de confusão, que retorna divergências entre modelo treinado e golden, supõe-se que as convergências estão certas. Contudo essa suposição está errada, como a análise das convergências mostrou. 47 frases apresentaram erros na PoS, e 55 tokens tiveram PoS corrigidos.
 
-Ao total, as correções foram de 358 tokens, o que corresponde a 0,16% do corpus².
+Ao total, as correções foram de 358 tokens, o que corresponde a 0,16% do corpus[²](#referências).
 
 # Experimento
 
