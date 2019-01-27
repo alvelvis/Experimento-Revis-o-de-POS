@@ -1,0 +1,106 @@
+elvis@elvis-LENOVO:~/Dropbox/Experimento Revisão de POS$ python3 conll18_ud_eval.py golden_teste_depois-convergencia_editado.conllu resultado_depois-convergencia.conllu -v
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     95.78 |     95.78 |     95.78 |     95.78
+XPOS       |    100.00 |    100.00 |    100.00 |    100.00
+UFeats     |     95.06 |     95.06 |     95.06 |     95.06
+AllTags    |     92.16 |     92.16 |     92.16 |     92.16
+Lemmas     |     96.82 |     96.82 |     96.82 |     96.82
+UAS        |     84.96 |     84.96 |     84.96 |     84.96
+LAS        |     81.48 |     81.48 |     81.48 |     81.48
+CLAS       |     74.79 |     74.27 |     74.53 |     74.27
+MLAS       |     66.08 |     65.61 |     65.85 |     65.61
+BLEX       |     71.39 |     70.88 |     71.13 |     70.88
+
+
+elvis@elvis-LENOVO:~/Dropbox/Experimento Revisão de POS$ python3 conll18_ud_eval.py golden_teste_depois-convergencia_editado.conllu resultado_mais-antiga.conllu -v
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     95.98 |     95.98 |     95.98 |     95.98
+XPOS       |    100.00 |    100.00 |    100.00 |    100.00
+UFeats     |     94.94 |     94.94 |     94.94 |     94.94
+AllTags    |     92.24 |     92.24 |     92.24 |     92.24
+Lemmas     |     96.94 |     96.94 |     96.94 |     96.94
+UAS        |     84.99 |     84.99 |     84.99 |     84.99
+LAS        |     81.04 |     81.04 |     81.04 |     81.04
+CLAS       |     74.01 |     73.59 |     73.80 |     73.59
+MLAS       |     65.28 |     64.91 |     65.10 |     64.91
+BLEX       |     70.90 |     70.50 |     70.70 |     70.50
+
+===================
+
+elvis@elvis-PC024:/mnt/mmcblk2/Dropbox/PIBIC/ACDC-UD$ python3 conll18_ud_eval.py -v Experimento\ Revisão\ de\ POS/pt-ud-test-depois-convergencia.conllu Experimento\ Revisão\ de\ POS/sistema_teste_mais-antiga.conllu
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     95.85 |     95.85 |     95.85 |     95.85
+XPOS       |      5.88 |      5.88 |      5.88 |      5.88
+UFeats     |     94.98 |     94.98 |     94.98 |     94.98
+AllTags    |      4.79 |      4.79 |      4.79 |      4.79
+Lemmas     |     96.71 |     96.71 |     96.71 |     96.71
+UAS        |     84.66 |     84.66 |     84.66 |     84.66
+LAS        |     81.09 |     81.09 |     81.09 |     81.09
+CLAS       |     73.92 |     73.45 |     73.68 |     73.45
+MLAS       |     65.07 |     64.66 |     64.87 |     64.66
+BLEX       |     70.40 |     69.95 |     70.18 |     69.95
+
+elvis@elvis-PC024:/mnt/mmcblk2/Dropbox/PIBIC/ACDC-UD$ python3 conll18_ud_eval.py -v Experimento\ Revisão\ de\ POS/pt-ud-test-depois-convergencia.conllu Experimento\ Revisão\ de\ POS/sistema_teste_depois-convergencia.conllu
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     96.01 |     96.01 |     96.01 |     96.01
+XPOS       |      5.88 |      5.88 |      5.88 |      5.88
+UFeats     |     94.98 |     94.98 |     94.98 |     94.98
+AllTags    |      4.79 |      4.79 |      4.79 |      4.79
+Lemmas     |     96.92 |     96.92 |     96.92 |     96.92
+UAS        |     84.86 |     84.86 |     84.86 |     84.86
+LAS        |     81.10 |     81.10 |     81.10 |     81.10
+CLAS       |     73.55 |     73.09 |     73.32 |     73.09
+MLAS       |     65.21 |     64.80 |     65.00 |     64.80
+BLEX       |     70.24 |     69.79 |     70.02 |     69.79
+
+
+
+elvis@elvis-PC024:/mnt/mmcblk2/Dropbox/PIBIC/ACDC-UD$ python3 conll18_ud_eval.py -v UD-Bosque/golden_teste.conllu Experimento\ Revisão\ de\ POS/golden_teste_mais-antiga.conllu
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     96.47 |     96.47 |     96.47 |     96.47
+XPOS       |    100.00 |    100.00 |    100.00 |    100.00
+UFeats     |     95.28 |     95.28 |     95.28 |     95.28
+AllTags    |     92.94 |     92.94 |     92.94 |     92.94
+Lemmas     |     96.80 |     96.80 |     96.80 |     96.80
+UAS        |     84.74 |     84.74 |     84.74 |     84.74
+LAS        |     81.39 |     81.39 |     81.39 |     81.39
+CLAS       |     74.39 |     73.94 |     74.16 |     73.94
+MLAS       |     66.64 |     66.24 |     66.44 |     66.24
+BLEX       |     70.88 |     70.45 |     70.66 |     70.45
+
+elvis@elvis-PC024:/mnt/mmcblk2/Dropbox/PIBIC/ACDC-UD$ python3 conll18_ud_eval.py -v UD-Bosque/golden_teste.conllu Experimento\ Revisão\ de\ POS/golden_teste_depois-convergencia.conllu 
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |    100.00 |    100.00 |    100.00 |
+Words      |    100.00 |    100.00 |    100.00 |
+UPOS       |     96.60 |     96.60 |     96.60 |     96.60
+XPOS       |    100.00 |    100.00 |    100.00 |    100.00
+UFeats     |     95.28 |     95.28 |     95.28 |     95.28
+AllTags    |     93.10 |     93.10 |     93.10 |     93.10
+Lemmas     |     97.01 |     97.01 |     97.01 |     97.01
+UAS        |     84.92 |     84.92 |     84.92 |     84.92
+LAS        |     81.31 |     81.31 |     81.31 |     81.31
+CLAS       |     73.81 |     73.41 |     73.61 |     73.41
+MLAS       |     66.62 |     66.26 |     66.44 |     66.26
+BLEX       |     70.52 |     70.14 |     70.33 |     70.14

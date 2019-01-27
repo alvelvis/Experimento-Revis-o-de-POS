@@ -1,0 +1,28 @@
+* Working area for Bosque-UD 2.0
+
+- scripts/ :: contains all the scripts used to process, validate, and
+     convert Bosque files.
+
+- documents/ :: contains all the individual documents of the Bosque
+     corpus.  All changes to the corpus should be made to these files.
+
+- draft/ :: scratch area for ideas, lists, etc.
+
+- freeling/ :: contains all the files related to converting the corpus
+     to a format to be used in FreeLing
+
+- staging/ :: staging area for new content that will be added to
+     Bosque
+
+Tools
+
+- Search :: http://wnpt.brlcloud.com/dep_search_webgui/
+- CONLLU Validator :: http://wnpt.brlcloud.com/validator/form
+
+Team
+
+- Alexandre Rademaker
+- Claudia Freitas
+- Fabricio Chalub
+- Valeria de Paiva
+- Livy Real
